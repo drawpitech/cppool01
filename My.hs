@@ -27,3 +27,6 @@ myTuple a b = (a, b)
 
 myTruple :: a -> b -> c -> (a, b, c)
 myTruple a b c = (a, b, c)
+
+myFst :: (a, b) -> a
+myFst (a, b) = a
