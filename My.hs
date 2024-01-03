@@ -24,3 +24,6 @@ myMax = max
 
 myTuple :: a -> b -> (a, b)
 myTuple a b = (a, b)
+
+myTruple :: a -> b -> c -> (a, b, c)
+myTruple a b c = (a, b, c)
