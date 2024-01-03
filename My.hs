@@ -56,7 +56,7 @@ myLength (_:a) = myLength a + 1
 myNth :: [a] -> Int -> a
 myNth [] _ = error "out of range rip bozo"
 myNth (a:_) 0 = a
-myNth (_:a) n = (myNth a) (n - 1)
+myNth (_:a) n = myNth a (n - 1)
 
 myTake :: Int -> [a] -> [a]
 myTake 0 _ = []
@@ -102,3 +102,11 @@ myFilter _ [] = []
 myFilter f (e:arr) = if f e
     then e : myFilter f arr
     else myFilter f arr
+
+myFoldl :: (b -> a -> b) -> b -> [a] -> b
+myFoldl _ start [] = start
+myFoldl f start (e:arr) = myFoldl f (f start e) arr
+
+myFoldlr :: (a -> b -> b) -> b -> [a] -> b
+myFoldlr _ start [] = start
+myFoldlr f start arr = myFoldlr f (f (myLast arr) start) (myInit arr)
