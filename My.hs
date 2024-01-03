@@ -72,6 +72,10 @@ myAppend :: [a] -> [a] -> [a]
 myAppend [] b = b
 myAppend (a:c) b = a : myAppend c b
 
+myReverse :: [a] -> [a]
+myReverse [] = []
+myReverse (a:b) = myAppend (myReverse b) [a]
+
 myInit :: [a] -> [a]
 myInit [] = error "ono empty list"
 myInit a = myTake (myLength a - 1) a
