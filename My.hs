@@ -10,3 +10,8 @@ mySucc n = n + 1
 
 myIsNeg :: Int -> Bool
 myIsNeg n = n < 0
+
+myAbs :: Int -> Int
+myAbs n = if myIsNeg n
+    then (-n)
+    else n
