@@ -107,9 +107,9 @@ myFoldl :: (b -> a -> b) -> b -> [a] -> b
 myFoldl _ start [] = start
 myFoldl f start (e:arr) = myFoldl f (f start e) arr
 
-myFoldlr :: (a -> b -> b) -> b -> [a] -> b
-myFoldlr _ start [] = start
-myFoldlr f start arr = myFoldlr f (f (myLast arr) start) (myInit arr)
+myFoldr :: (a -> b -> b) -> b -> [a] -> b
+myFoldr _ start [] = start
+myFoldr f start arr = myFoldr f (f (myLast arr) start) (myInit arr)
 
 myPartition :: (a -> Bool) -> [a] -> ([a] , [a])
 myPartition _ [] = ([], [])
