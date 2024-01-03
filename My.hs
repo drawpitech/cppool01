@@ -2,7 +2,7 @@
 -- EPITECH PROJECT, 2024
 -- cpppool01
 -- File description:
--- My
+-- Source
 -}
 
 mySucc :: Int -> Int
@@ -42,12 +42,12 @@ mySwap :: (a, b) -> (b, a)
 mySwap (a, b) = (b, a)
 
 myHead :: [a] -> a
-myHead (a:_) = a
 myHead [] = error "ono empty list"
+myHead (a:_) = a
 
 myTail :: [a] -> [a]
-myTail (_:a) = a
 myTail [] = error "ono empty list"
+myTail (_:a) = a
 
 myLength :: [a] -> Int
 myLength [] = 0
@@ -111,13 +111,16 @@ myFoldr :: (a -> b -> b) -> b -> [a] -> b
 myFoldr _ start [] = start
 myFoldr f start arr = myFoldr f (f (myLast arr) start) (myInit arr)
 
+myNot :: Bool -> Bool
+myNot x = x == False
+
 myPartition :: (a -> Bool) -> [a] -> ([a] , [a])
 myPartition _ [] = ([], [])
-myPartition f arr = (myFilter f arr, myFilter (\ e -> f e == False) arr)
+myPartition f arr = (myFilter f arr, myFilter (myNot . f) arr)
 
 myQuickSort :: (a -> a -> Bool) -> [a] -> [a]
 myQuickSort _ [] = []
-myQuickSort f (p:xs) = myAppend 
-        (myAppend (myQuickSort f lesser) [p])
-        (myQuickSort f greater)
-    where (lesser, greater) = myPartition (\ x -> f x p) xs
+myQuickSort f (e:arr) = myAppend
+        (myAppend (myQuickSort f left) [e])
+        (myQuickSort f right)
+    where (left, right) = myPartition (`f` e) arr
