@@ -37,3 +37,6 @@ myFst (a, b) = a
 
 mySnd :: (a, b) -> b
 mySnd (a, b) = b
+
+mySwap :: (a, b) -> (b, a)
+mySwap (a, b) = (b, a)
