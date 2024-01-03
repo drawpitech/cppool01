@@ -17,10 +17,14 @@ myAbs n = if myIsNeg n
     else n
 
 myMin :: Int -> Int -> Int
-myMin = min
+myMin a b = if a < b
+    then a
+    else b
 
 myMax :: Int -> Int -> Int
-myMax = max
+myMax a b = if a > b
+    then b
+    else a
 
 myTuple :: a -> b -> (a, b)
 myTuple a b = (a, b)
