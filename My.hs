@@ -18,3 +18,6 @@ myAbs n = if myIsNeg n
 
 myMin :: Int -> Int -> Int
 myMin = min
+
+myMax :: Int -> Int -> Int
+myMax = max
