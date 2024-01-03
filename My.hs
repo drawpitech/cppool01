@@ -75,3 +75,7 @@ myAppend (a:c) b = a : myAppend c b
 myInit :: [a] -> [a]
 myInit [] = error "ono empty list"
 myInit a = myTake (myLength a - 1) a
+
+myLast :: [a] -> a
+myLast [] = error "ono empty list"
+myLast a = myHead (myDrop (myLength a - 1) a)
