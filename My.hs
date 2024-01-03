@@ -34,3 +34,6 @@ myTruple a b c = (a, b, c)
 
 myFst :: (a, b) -> a
 myFst (a, b) = a
+
+mySnd :: (a, b) -> b
+mySnd (a, b) = b
