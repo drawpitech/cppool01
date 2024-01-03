@@ -7,3 +7,6 @@
 
 mySucc :: Int -> Int
 mySucc n = n + 1
+
+myIsNeg :: Int -> Bool
+myIsNeg n = n < 0
