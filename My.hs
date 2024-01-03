@@ -52,3 +52,8 @@ myTail [] = error "ono empty list"
 myLength :: [a] -> Int
 myLength [] = 0
 myLength (_:a) = myLength a + 1
+
+myNth :: [a] -> Int -> a
+myNth [] _ = error "out of range rip bozo"
+myNth (a:_) 0 = a
+myNth (_:a) n = (myNth a) (n - 1)
