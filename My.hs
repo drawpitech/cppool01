@@ -57,3 +57,8 @@ myNth :: [a] -> Int -> a
 myNth [] _ = error "out of range rip bozo"
 myNth (a:_) 0 = a
 myNth (_:a) n = (myNth a) (n - 1)
+
+myTake :: Int -> [a] -> [a]
+myTake 0 _ = []
+myTake _ [] = []
+myTake n (a:b) = a : myTake (n - 1) b
