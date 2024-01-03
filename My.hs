@@ -21,3 +21,6 @@ myMin = min
 
 myMax :: Int -> Int -> Int
 myMax = max
+
+myTuple :: a -> b -> (a, b)
+myTuple a b = (a, b)
