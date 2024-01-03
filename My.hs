@@ -62,3 +62,7 @@ myTake :: Int -> [a] -> [a]
 myTake 0 _ = []
 myTake _ [] = []
 myTake n (a:b) = a : myTake (n - 1) b
+
+myAppend :: [a] -> [a] -> [a]
+myAppend [] b = b
+myAppend (a:c) b = a : myAppend c b
