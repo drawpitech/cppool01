@@ -94,9 +94,11 @@ myUnzip [] = ([], [])
 myUnzip ((a, b):r) = (a:ae, b:be) where (ae, be) = myUnzip r
 
 myMap :: (a -> b) -> [a] -> [b]
+myMap _ [] = []
 myMap f (e:arr) = f e : myMap f arr
 
 myFilter :: (a -> Bool) -> [a] -> [a]
+myFilter _ [] = []
 myFilter f (e:arr) = if f e
     then e : myFilter f arr
     else myFilter f arr
