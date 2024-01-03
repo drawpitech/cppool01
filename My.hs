@@ -79,3 +79,8 @@ myInit a = myTake (myLength a - 1) a
 myLast :: [a] -> a
 myLast [] = error "ono empty list"
 myLast a = myHead (myDrop (myLength a - 1) a)
+
+myZip :: [a] -> [b] -> [(a, b)]
+myZip _ [] = []
+myZip [] _ = []
+myZip (a:ae) (b:be) = (a, b) : myZip ae be
