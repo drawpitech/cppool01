@@ -42,5 +42,9 @@ mySwap :: (a, b) -> (b, a)
 mySwap (a, b) = (b, a)
 
 myHead :: [a] -> a
-myHead [a] = a
+myHead (a:_) = a
 myHead [] = error "ono empty list"
+
+myTail :: [a] -> [a]
+myTail (_:a) = a
+myTail [] = error "ono empty list"
