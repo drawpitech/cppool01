@@ -88,3 +88,7 @@ myZip :: [a] -> [b] -> [(a, b)]
 myZip _ [] = []
 myZip [] _ = []
 myZip (a:ae) (b:be) = (a, b) : myZip ae be
+
+myUnzip :: [(a, b)] -> ([a], [b])
+myUnzip [] = ([], [])
+myUnzip ((a, b):r) = (a:ae, b:be) where (ae, be) = myUnzip r
