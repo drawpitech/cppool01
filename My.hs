@@ -48,3 +48,7 @@ myHead [] = error "ono empty list"
 myTail :: [a] -> [a]
 myTail (_:a) = a
 myTail [] = error "ono empty list"
+
+myLength :: [a] -> Int
+myLength [] = 0
+myLength (_:a) = myLength a + 1
