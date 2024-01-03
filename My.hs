@@ -114,3 +114,10 @@ myFoldlr f start arr = myFoldlr f (f (myLast arr) start) (myInit arr)
 myPartition :: (a -> Bool) -> [a] -> ([a] , [a])
 myPartition _ [] = ([], [])
 myPartition f arr = (myFilter f arr, myFilter (\ e -> f e == False) arr)
+
+myQuickSort :: (a -> a -> Bool) -> [a] -> [a]
+myQuickSort _ [] = []
+myQuickSort f (p:xs) = myAppend 
+        (myAppend (myQuickSort f lesser) [p])
+        (myQuickSort f greater)
+    where (lesser, greater) = myPartition (\ x -> f x p) xs
