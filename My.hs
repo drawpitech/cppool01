@@ -23,8 +23,8 @@ myMin a b = if a < b
 
 myMax :: Int -> Int -> Int
 myMax a b = if a > b
-    then b
-    else a
+    then a
+    else b
 
 myTuple :: a -> b -> (a, b)
 myTuple a b = (a, b)
