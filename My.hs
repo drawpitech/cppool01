@@ -15,3 +15,6 @@ myAbs :: Int -> Int
 myAbs n = if myIsNeg n
     then (-n)
     else n
+
+myMin :: Int -> Int -> Int
+myMin = min
