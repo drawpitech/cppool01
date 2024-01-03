@@ -92,3 +92,6 @@ myZip (a:ae) (b:be) = (a, b) : myZip ae be
 myUnzip :: [(a, b)] -> ([a], [b])
 myUnzip [] = ([], [])
 myUnzip ((a, b):r) = (a:ae, b:be) where (ae, be) = myUnzip r
+
+myMap :: (a -> b) -> [a] -> [b]
+myMap f (e:arr) = f e : myMap f arr
