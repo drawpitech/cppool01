@@ -110,3 +110,7 @@ myFoldl f start (e:arr) = myFoldl f (f start e) arr
 myFoldlr :: (a -> b -> b) -> b -> [a] -> b
 myFoldlr _ start [] = start
 myFoldlr f start arr = myFoldlr f (f (myLast arr) start) (myInit arr)
+
+myPartition :: (a -> Bool) -> [a] -> ([a] , [a])
+myPartition _ [] = ([], [])
+myPartition f arr = (myFilter f arr, myFilter (\ e -> not (f e)) arr)
