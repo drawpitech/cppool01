@@ -111,12 +111,9 @@ myFoldr :: (a -> b -> b) -> b -> [a] -> b
 myFoldr _ start [] = start
 myFoldr f start arr = myFoldr f (f (myLast arr) start) (myInit arr)
 
-myNot :: Bool -> Bool
-myNot x = x == False
-
 myPartition :: (a -> Bool) -> [a] -> ([a] , [a])
 myPartition _ [] = ([], [])
-myPartition f arr = (myFilter f arr, myFilter (myNot . f) arr)
+myPartition f arr = (myFilter f arr, myFilter (\ e -> (f e) == False) arr)
 
 myQuickSort :: (a -> a -> Bool) -> [a] -> [a]
 myQuickSort _ [] = []
